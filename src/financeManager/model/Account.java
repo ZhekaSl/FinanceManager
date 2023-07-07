@@ -39,7 +39,6 @@ public class Account extends Common {
             if (t.getFromAccount().equals(sd.getOldCommon())) t.setFromAccount(this);
             if (t.getToAccount().equals(sd.getOldCommon())) t.setToAccount(this);
         }
-
         setAmountFromTransactionsAndTransfers(sd.getTransactions(), sd.getTransfers());
     }
     public double getAmount() {
