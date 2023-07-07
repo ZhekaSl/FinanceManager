@@ -11,6 +11,7 @@ import java.util.Date;
 
 public class FinanceManager {
     public static void main(String[] args) throws ModelException {
+        fd
         init();
         System.out.println(Format.dateMonth(new Date()));
 
