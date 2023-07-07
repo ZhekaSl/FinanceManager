@@ -29,6 +29,19 @@ public class Account extends Common {
         setAmountFromTransactionsAndTransfers(SaveData.getInstance().getTransactions(), SaveData.getInstance().getTransfers());
     }
 
+    public void postEdit() {
+        SaveData sd = SaveData.getInstance();
+        for (Transaction t : sd.getTransactions()) {
+            if (t.getAccount().equals(sd.getOldCommon())) t.setAccount(this);
+        }
+
+        for (Transfer t : sd.getTransfers()) {
+            if (t.getFromAccount().equals(sd.getOldCommon())) t.setFromAccount(this);
+            if (t.getToAccount().equals(sd.getOldCommon())) t.setToAccount(this);
+        }
+
+        setAmountFromTransactionsAndTransfers(sd.getTransactions(), sd.getTransfers());
+    }
     public double getAmount() {
         return amount;
     }
