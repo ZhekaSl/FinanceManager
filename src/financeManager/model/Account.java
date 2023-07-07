@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Account extends Common {
     private String title;
     private Currency currency;
-    private double startAmount;oo
+    private double startAmount;oof
     private double amount;
 
     public Account() {
