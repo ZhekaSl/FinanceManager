@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="FinanceManager:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/FinanceManager_jar</output-path>
-    <root id="archive" name="FinanceManager.jar">
-      <element id="module-output" name="FinanceManager" />
-      <element id="extracted-dir" path="$USER_HOME$/Desktop/ini4j-0.5.4.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>
