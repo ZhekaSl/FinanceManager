@@ -133,7 +133,7 @@ final public class SaveData {
         List ref = getRef(c);
         if (ref.contains(c)) throw new ModelException(ModelException.IS_EXISTS);
         ref.add(c);
-        c.postAdd();
+        c.postAdd(SaveData.getInstance());
         sort();
         saved = false;
     }
@@ -145,14 +145,14 @@ final public class SaveData {
         }
         ref.set(ref.indexOf(oldC), newC);
         oldCommon = oldC;
-        newC.postEdit();
+        newC.postEdit(SaveData.getInstance());
         sort();
         saved = false;
     }
 
     public void remove(Common c) {
         getRef(c).remove(c);
-        c.postRemove();
+        c.postRemove(this);
         saved = false;
     }
 

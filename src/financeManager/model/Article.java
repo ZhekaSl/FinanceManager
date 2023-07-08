@@ -1,6 +1,7 @@
 package financeManager.model;
 
 import financeManager.exception.ModelException;
+import financeManager.saveLoad.SaveData;
 
 import java.util.Objects;
 
@@ -28,6 +29,16 @@ public class Article extends Common {
         return "Article{" +
                 "title='" + title + '\'' +
                 '}';
+    }
+
+    @Override
+    public void postEdit(SaveData sd) {
+        for (Transaction t : sd.getTransactions()) {
+            if (t.getArticle().equals(sd.getOldCommon())) {
+                t.setArticle(this);
+            }
+        }
+
     }
 
     @Override

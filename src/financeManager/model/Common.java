@@ -1,5 +1,7 @@
 package financeManager.model;
 
+import financeManager.saveLoad.SaveData;
+
 public abstract class Common {
 
     public Common() {
@@ -11,15 +13,15 @@ public abstract class Common {
     }
 
 
-    public void postAdd() {
+    public void postAdd(SaveData sd) {
 
     }
 
-    public void postEdit() {
+    public void postEdit(SaveData sd) {
 
     }
 
-    public void postRemove() {
+    public void postRemove(SaveData sd) {
 
     }
 }

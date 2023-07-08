@@ -25,7 +25,7 @@ public class Account extends Common {
     }
 
     @Override
-    public void postAdd() {
+    public void postAdd(SaveData sd) {
         setAmountFromTransactionsAndTransfers(SaveData.getInstance().getTransactions(), SaveData.getInstance().getTransfers());
     }
 
@@ -80,6 +80,7 @@ public class Account extends Common {
         for (Transfer transfer : transfers) {
             if (transfer.getFromAccount().equals(this)) {
                 this.amount -= transfer.getFromAmount();
+
             }
 
             if (transfer.getToAccount().equals(this)) {
